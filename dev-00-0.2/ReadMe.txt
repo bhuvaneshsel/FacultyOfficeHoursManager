@@ -2,7 +2,7 @@
 # Version: 0.2
 
 # who did what:
-1. 
+1. Eman - home page
 2. 
 3. 
 3. 
