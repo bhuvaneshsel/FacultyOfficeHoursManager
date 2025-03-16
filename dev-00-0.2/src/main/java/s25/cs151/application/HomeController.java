@@ -16,6 +16,7 @@ public class HomeController {
     @FXML
     private Button officeHoursButton;
 
+    //executes when Semester's Office Hours button is pressed
     public void switchToOfficeHoursPage(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("DefineOfficeHours.fxml"));
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();

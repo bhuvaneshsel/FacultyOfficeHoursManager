@@ -22,12 +22,12 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="yearLabel" layoutX="174.0" layoutY="155.0" text="Year">
+      <Label fx:id="yearLabel" layoutX="174.0" layoutY="143.0" text="Year">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="yearTextField" layoutX="323.0" layoutY="158.0" />
+      <TextField fx:id="yearTextField" layoutX="323.0" layoutY="146.0" />
       <Label fx:id="daysLabel" layoutX="172.0" layoutY="198.0" text="Days">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -62,7 +62,7 @@
             </CheckBox>
          </children>
       </VBox>
-      <Button fx:id="saveButton" layoutX="322.0" layoutY="343.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="32.0" prefWidth="150.0" text="Save">
+      <Button fx:id="saveButton" layoutX="322.0" layoutY="343.0" mnemonicParsing="false" onAction="#saveForm" prefHeight="32.0" prefWidth="150.0" text="Save">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -72,5 +72,6 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Label fx:id="errorLabel" layoutX="322.0" layoutY="173.0" prefHeight="17.0" prefWidth="228.0" textFill="RED" />
    </children>
 </AnchorPane>
