@@ -10,9 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class DefineOfficeHoursController implements Initializable {
     @FXML
@@ -36,27 +38,84 @@ public class DefineOfficeHoursController implements Initializable {
     @FXML
     private Label errorLabel;
 
+    String officeHoursCSV = System.getProperty("user.dir")+"\\src\\main\\resources\\s25\\cs151\\application\\OfficeHours.csv";
+
+    HashMap<String, String> dataMap = new HashMap<>();
 
     //executes when Save button is pressed
     public void saveForm(ActionEvent e) throws IOException {
         if (validateInputs()) {
-            Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
+            errorLabel.setText("");
 
+            //stores data in CSV
+            FileWriter writer = new FileWriter(officeHoursCSV, true);
+            String selectedDays = getSelectedDays();
+            writer.append("\n" + semesterChoiceBox.getValue() + "," + yearTextField.getText() + "," + selectedDays);
+            writer.close();
+
+
+            //stores Semester and Year in HashMap to use to check for duplicate entries
+            dataMap.put(semesterChoiceBox.getValue(), yearTextField.getText());
+        }
     }
 
-    //executes when Cancel button is pressed
-    public void cancelForm(ActionEvent e) throws IOException {
+    public String getSelectedDays() {
+        String selectedDays = "";
+        if (mondayCheckBox.isSelected()) {
+            selectedDays += "Monday ";
+        }
+        if (tuesdayCheckBox.isSelected()) {
+            selectedDays += "Tuesday ";
+        }
+        if (wednesdayCheckBox.isSelected()) {
+            selectedDays += "Wednesday ";
+        }
+        if (thursdayCheckBox.isSelected()) {
+            selectedDays += "Thursday ";
+        }
+        if (fridayCheckBox.isSelected()) {
+            selectedDays += "Friday ";
+        }
+        return selectedDays;
+    }
+
+    //Gets initial CSV data (if there is any) and puts it in a HashMap which is used to check for duplicate entries
+    public HashMap<String, String> getInitialData() throws FileNotFoundException {
+        HashMap<String, String> data = new HashMap<>();
+        File officeHoursFile = new File(officeHoursCSV);
+
+        Scanner sc = new Scanner(officeHoursFile);
+
+        //skips headers
+        if (sc.hasNextLine()) {
+            sc.nextLine();
+        }
+
+        //reads each line in CSV and puts semester and year values in HashMap
+        while(sc.hasNextLine()) {
+            String[] values = sc.nextLine().split(",");
+            String semester = "";
+            String year = "";
+            if (values.length > 1) {
+                semester = values[0];
+                year = values[1];
+            }
+
+            data.put(semester, year);
+        }
+        sc.close();
+
+        return data;
+    }
+
+    public void switchToHome(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 
     //checks for valid year input
     public boolean validateInputs() {
@@ -74,6 +133,10 @@ public class DefineOfficeHoursController implements Initializable {
             errorLabel.setText("Please enter a positive four-digit integer");
             return false;
         }
+        if (dataMap.getOrDefault(semesterChoiceBox.getValue(), "").equals(yearTextField.getText())) {
+            errorLabel.setText("Duplicate entries are not allowed");
+            return false;
+        }
         return true;
     }
 
@@ -82,5 +145,11 @@ public class DefineOfficeHoursController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         semesterChoiceBox.getItems().addAll(new String[]{"Spring", "Summer", "Fall", "Winter"});
         semesterChoiceBox.setValue("Spring");
+
+        try {
+            dataMap = getInitialData();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
