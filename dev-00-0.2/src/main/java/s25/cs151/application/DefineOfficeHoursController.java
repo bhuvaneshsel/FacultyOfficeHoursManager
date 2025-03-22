@@ -9,10 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.*;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -40,7 +41,7 @@ public class DefineOfficeHoursController implements Initializable {
 
     String officeHoursCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/OfficeHours.csv";
 
-    HashMap<String, String> dataMap = new HashMap<>();
+    HashSet<Pair<String,String>> dataSet = new HashSet<>();
 
     //executes when Save button is pressed
     public void saveForm(ActionEvent e) throws IOException {
@@ -54,8 +55,8 @@ public class DefineOfficeHoursController implements Initializable {
             writer.close();
 
 
-            //stores Semester and Year in HashMap to use to check for duplicate entries
-            dataMap.put(semesterChoiceBox.getValue(), yearTextField.getText());
+            //stores Semester and Year in HashSet to use to check for duplicate entries
+            dataSet.add(new Pair<>(semesterChoiceBox.getValue(), yearTextField.getText()));
         }
     }
 
@@ -80,8 +81,8 @@ public class DefineOfficeHoursController implements Initializable {
     }
 
     //Gets initial CSV data (if there is any) and puts it in a HashMap which is used to check for duplicate entries
-    public HashMap<String, String> getInitialData() throws FileNotFoundException {
-        HashMap<String, String> data = new HashMap<>();
+    public HashSet<Pair<String, String>> getInitialData() throws FileNotFoundException {
+        HashSet<Pair<String,String>> data = new HashSet<>();
         File officeHoursFile = new File(officeHoursCSV);
 
         Scanner sc = new Scanner(officeHoursFile);
@@ -91,7 +92,7 @@ public class DefineOfficeHoursController implements Initializable {
             sc.nextLine();
         }
 
-        //reads each line in CSV and puts semester and year values in HashMap
+        //reads each line in CSV and puts semester and year values in HashSet
         while(sc.hasNextLine()) {
             String[] values = sc.nextLine().split(",");
             String semester = "";
@@ -101,7 +102,7 @@ public class DefineOfficeHoursController implements Initializable {
                 year = values[1];
             }
 
-            data.put(semester, year);
+            data.add(new Pair<String,String>(semester, year));
         }
         sc.close();
 
@@ -117,8 +118,9 @@ public class DefineOfficeHoursController implements Initializable {
     }
 
 
-    //checks for valid year input
+
     public boolean validateInputs() {
+        //checks for valid year input
         if (yearTextField.getText().isEmpty()) {
             errorLabel.setText("This field is required");
             return false;
@@ -133,7 +135,9 @@ public class DefineOfficeHoursController implements Initializable {
             errorLabel.setText("Please enter a positive four-digit integer");
             return false;
         }
-        if (dataMap.getOrDefault(semesterChoiceBox.getValue(), "").equals(yearTextField.getText())) {
+
+        //checks for duplicate entries
+        if (dataSet.contains(new Pair<>(semesterChoiceBox.getValue(), yearTextField.getText()))) {
             errorLabel.setText("Duplicate entries are not allowed");
             return false;
         }
@@ -147,7 +151,7 @@ public class DefineOfficeHoursController implements Initializable {
         semesterChoiceBox.setValue("Spring");
 
         try {
-            dataMap = getInitialData();
+            dataSet = getInitialData();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
