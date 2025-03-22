@@ -38,7 +38,7 @@ public class DefineOfficeHoursController implements Initializable {
     @FXML
     private Label errorLabel;
 
-    String officeHoursCSV = System.getProperty("user.dir")+"\\src\\main\\resources\\s25\\cs151\\application\\OfficeHours.csv";
+    String officeHoursCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/OfficeHours.csv";
 
     HashMap<String, String> dataMap = new HashMap<>();
 
