@@ -2,10 +2,10 @@
 # Version: 0.2
 
 # who did what:
-1. Eman Naseerkhan - Home page
-2. Yogi Chipalkatti - Home page
-3. Bhuvanesh Selvaraj - Define Semester Office Hours page
-3. Nhat Nguyen - Define Semester Office Hours page
+1. Eman Naseerkhan - Worked on displaying data
+2. Yogi Chipalkatti -
+3. Bhuvanesh Selvaraj - Storing data
+3. Nhat Nguyen -
 
 
 # Any other instruction that users need to know:
