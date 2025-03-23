@@ -122,7 +122,13 @@ public class DefineOfficeHoursController implements Initializable {
     public boolean validateInputs() {
         //checks for valid year input
         if (yearTextField.getText().isEmpty()) {
-            errorLabel.setText("This field is required");
+            errorLabel.setText("A year is required");
+            return false;
+        }
+        //checks that at least on day is selected
+        if (!mondayCheckBox.isSelected() && !tuesdayCheckBox.isSelected() && !wednesdayCheckBox.isSelected()
+                && !thursdayCheckBox.isSelected() && !fridayCheckBox.isSelected()) {
+            errorLabel.setText("Please select at least one day");
             return false;
         }
         try {

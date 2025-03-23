@@ -74,12 +74,7 @@ public class SavedOfficeHoursController implements Initializable {
             String[] values = line.split(",", 3);
 
             SemesterOfficeHours semOfficeHours;
-
-            if (values.length > 1 && values.length < 3) {
-                semOfficeHours = new SemesterOfficeHours(values[0], values[1]);
-                CSVList.add(semOfficeHours);
-            }
-            else if (values.length > 2) {
+            if (values.length > 2) {
                 semOfficeHours = new SemesterOfficeHours(values[0], values[1], values[2]);
                 CSVList.add(semOfficeHours);
             }

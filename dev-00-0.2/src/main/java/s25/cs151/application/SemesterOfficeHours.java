@@ -12,11 +12,6 @@ public class SemesterOfficeHours implements Comparable<SemesterOfficeHours> {
         this.days = days;
     }
 
-    public SemesterOfficeHours(String semester, String year) {
-        this.semester = semester;
-        this.year = year;
-    }
-
     public String getSemester() {
         return semester;
     }
