@@ -57,6 +57,7 @@ public class DefineOfficeHoursController implements Initializable {
 
             //stores Semester and Year in HashSet to use to check for duplicate entries
             dataSet.add(new Pair<>(semesterChoiceBox.getValue(), yearTextField.getText()));
+            switchToHome(e);
         }
     }
 
@@ -109,6 +110,7 @@ public class DefineOfficeHoursController implements Initializable {
         return data;
     }
 
+    //executes when Cancel and Save button are pressed
     public void switchToHome(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
@@ -116,8 +118,6 @@ public class DefineOfficeHoursController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
     public boolean validateInputs() {
         //checks for valid year input

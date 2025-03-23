@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s25.cs151.application.SavedOfficeHoursController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="5.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER" />
+   </top>
    <center>
-      <TableView fx:id="officeHoursTable" prefHeight="306.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="officeHoursTable" prefHeight="348.0" prefWidth="680.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="semester" prefWidth="130.70770198106766" text="Semester" />
           <TableColumn fx:id="year" prefWidth="141.04612731933594" text="Year" />
@@ -18,7 +23,11 @@
          </columnResizePolicy>
       </TableView>
    </center>
-   <top>
-      <VBox prefHeight="5.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
-   </top>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#switchToHome" prefHeight="50.0" prefWidth="123.0" text="Back" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </bottom>
 </BorderPane>

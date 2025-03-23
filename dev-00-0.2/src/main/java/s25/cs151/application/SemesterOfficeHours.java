@@ -1,6 +1,6 @@
 package s25.cs151.application;
 
-public class SemesterOfficeHours {
+public class SemesterOfficeHours implements Comparable<SemesterOfficeHours> {
 
     private String semester;
     private String year;
@@ -10,6 +10,11 @@ public class SemesterOfficeHours {
         this.semester = semester;
         this.year = year;
         this.days = days;
+    }
+
+    public SemesterOfficeHours(String semester, String year) {
+        this.semester = semester;
+        this.year = year;
     }
 
     public String getSemester() {
@@ -22,5 +27,38 @@ public class SemesterOfficeHours {
 
     public String getDays() {
         return days;
+    }
+
+    //converts the semester into an int for easier comparisons
+    public int getSemesterInt(SemesterOfficeHours sem) {
+        if (sem.getSemester().equals("Spring")) {
+            return 1;
+        }
+        else if (sem.getSemester().equals("Summer")){
+            return 2;
+        }
+        else if (sem.getSemester().equals("Fall")) {
+            return 3;
+        }
+        else if (sem.getSemester().equals("Winter")){
+            return 4;
+        }
+        return 0;
+    }
+
+    @Override
+    public int compareTo(SemesterOfficeHours o) {
+        try {
+            if (Integer.parseInt(this.getYear()) != Integer.parseInt(o.getYear())) {
+                return Integer.parseInt(o.getYear()) - Integer.parseInt(this.getYear());
+            }
+            else {
+                int thisSeasonInt = getSemesterInt(this);
+                int oSeasonInt = getSemesterInt(o);
+                return oSeasonInt - thisSeasonInt;
+            }
+        } catch (NumberFormatException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
