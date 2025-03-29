@@ -21,7 +21,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="340.0" layoutY="250.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="109.0" text="Semester's Courses" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="semesterCoursesButton" layoutX="340.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSemesterCoursesPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Courses" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>

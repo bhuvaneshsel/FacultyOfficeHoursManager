@@ -1,10 +1,10 @@
-# Name of application: 
-# Version: 0.4
+# Name of application: Office Connect
+# Version: 0.5
 
 # who did what:
-1. Eman Naseerkhan - Worked on displaying data
+1. Eman Naseerkhan - Worked on Courses page and storing courses data
 2. Yogi Chipalkatti -
-3. Bhuvanesh Selvaraj - Worked on storing data and helped with displaying data
+3. Bhuvanesh Selvaraj -
 3. Nhat Nguyen -
 
 

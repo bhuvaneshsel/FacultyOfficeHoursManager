@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s25.cs151.application.SemesterCoursesController">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="77.0" layoutY="31.0" text="Define Semester's Courses">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="120.0" text="Course Code:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="182.0" text="Course Name:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="238.0" text="Section Number:">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codeTextField" layoutX="283.0" layoutY="125.0" prefHeight="25.0" prefWidth="213.0" />
+      <TextField fx:id="nameTextField" layoutX="283.0" layoutY="187.0" prefHeight="25.0" prefWidth="213.0" />
+      <TextField fx:id="numberTextField" layoutX="316.0" layoutY="243.0" prefHeight="25.0" prefWidth="178.0" />
+      <Button fx:id="cancelButton" layoutX="146.0" layoutY="329.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="39.0" prefWidth="137.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveButton" layoutX="339.0" layoutY="329.0" mnemonicParsing="false" onAction="#saveForm" prefHeight="39.0" prefWidth="137.0" text="Save">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorLabel" layoutX="209.0" layoutY="286.0" prefHeight="18.0" prefWidth="213.0" textFill="RED">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

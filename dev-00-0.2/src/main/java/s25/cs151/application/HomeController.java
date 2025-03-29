@@ -21,6 +21,8 @@ public class HomeController {
     private Button officeHoursButton;
     @FXML
     private Button savedOfficeHoursButton;
+    @FXML
+    private Button coursesButton;
 
     //executes when Semester's Office Hours button is pressed
     public void switchToOfficeHoursPage(ActionEvent e) throws IOException {
@@ -42,6 +44,15 @@ public class HomeController {
 
     public void switchToSavedTimeSlotsPage(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SavedTimeSlots.fxml"));
+        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    //executes when Semester's Courses button is pressed
+    public void switchToSemesterCoursesPage(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("DefineCourses.fxml"));
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
