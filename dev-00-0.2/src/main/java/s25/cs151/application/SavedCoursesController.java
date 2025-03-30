@@ -73,7 +73,7 @@ public class SavedCoursesController implements Initializable{
         //Read file and populate list
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            String[] values = line.split(",", 2);
+            String[] values = line.split(",", 3);
 
 
             SemesterCourses course;
