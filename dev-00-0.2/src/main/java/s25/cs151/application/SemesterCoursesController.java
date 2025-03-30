@@ -1,5 +1,4 @@
 package s25.cs151.application;
-
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 
 import javafx.fxml.FXMLLoader;
