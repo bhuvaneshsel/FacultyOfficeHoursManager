@@ -7,21 +7,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s25.cs151.application.HomeController">
    <children>
-      <Button fx:id="officeHoursButton" layoutX="340.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchToOfficeHoursPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Office Hours" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="officeHoursButton" layoutX="340.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToOfficeHoursPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Office Hours" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="339.0" layoutY="55.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="226.0" text="Office Hours Schedule">
+      <Button layoutX="339.0" layoutY="42.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="226.0" text="Office Hours Schedule">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="340.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToDefineTimeSlotsPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Time Slots" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="340.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchToDefineTimeSlotsPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Time Slots" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="semesterCoursesButton" layoutX="340.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSemesterCoursesPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Courses" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="semesterCoursesButton" layoutX="340.0" layoutY="236.0" mnemonicParsing="false" onAction="#switchToSemesterCoursesPage" prefHeight="53.0" prefWidth="109.0" text="Semester's Courses" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
@@ -31,17 +31,22 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="savedOfficeHoursButton" layoutX="456.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchToSavedOfficeHoursPage" prefHeight="53.0" prefWidth="109.0" text="Saved Office Hours" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="savedOfficeHoursButton" layoutX="454.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToSavedOfficeHoursPage" prefHeight="53.0" prefWidth="109.0" text="Saved Office Hours" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="456.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToSavedTimeSlotsPage" prefHeight="53.0" prefWidth="106.0" text="Saved Time Slots" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="456.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchToSavedTimeSlotsPage" prefHeight="53.0" prefWidth="106.0" text="Saved Time Slots" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="456.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSavedSemesterCoursesPage" prefHeight="53.0" prefWidth="106.0" text="Saved Courses" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="456.0" layoutY="236.0" mnemonicParsing="false" onAction="#switchToSavedSemesterCoursesPage" prefHeight="53.0" prefWidth="106.0" text="Saved Courses" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="savedScheduleButton" layoutX="340.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToSavedSchedule" prefHeight="53.0" prefWidth="227.0" text="Saved Office Hours Schedule">
          <font>
             <Font size="14.0" />
          </font>

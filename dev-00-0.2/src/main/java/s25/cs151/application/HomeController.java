@@ -75,4 +75,12 @@ public class HomeController {
         stage.show();
     }
 
+    public void switchToSavedSchedule(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SavedSchedule.fxml"));
+        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
