@@ -35,7 +35,7 @@ public class SemesterSchedule implements Comparable<SemesterSchedule> {
     public int compareTo(SemesterSchedule o) {
         try {
 
-            java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("mm/dd/yyyy");
+            java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy");
             java.time.LocalDate thisDate = java.time.LocalDate.parse(this.getDate(), formatter);
             java.time.LocalDate otherDate = java.time.LocalDate.parse(o.getDate(), formatter);
 
