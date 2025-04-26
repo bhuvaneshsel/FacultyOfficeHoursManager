@@ -11,16 +11,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Comparator;
 import java.util.ResourceBundle;
@@ -30,6 +25,9 @@ public class SearchSchedulesController implements Initializable {
 
     @FXML
     private Button backButton;
+
+    @FXML
+    private Button deleteButton;
 
     @FXML
     private TableColumn<SemesterSchedule, String> comment;
@@ -138,4 +136,37 @@ public class SearchSchedulesController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    //Occurs when delete button is pushed, if an item in the table was selected it will be removed
+    @FXML
+    private void handleDelete(ActionEvent e) {
+        SemesterSchedule selectedItem = scheduleTable.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            dataList.remove(selectedItem);
+            updateCSVFile();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select an item to delete.");
+            alert.showAndWait();
+        }
+    }
+    //Rewrites the Schedule csv file, without the deleted line
+    private void updateCSVFile() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(scheduleCSV))) {
+            writer.println("Name,Date,TimeSlot,Course,Reason,Comment");
+
+            //Loops thorugh current data and rewrites in csv
+            for (SemesterSchedule schedule : dataList) {
+                writer.printf("%s,%s,%s,%s,%s,%s%n",
+                        schedule.getFullName(),
+                        schedule.getDate(),
+                        schedule.getTimeSlot(),
+                        schedule.getCourse(),
+                        schedule.getReason(),
+                        schedule.getComment());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

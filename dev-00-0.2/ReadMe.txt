@@ -1,11 +1,11 @@
 # Name of application: Office Connect
-# Version: 0.6
+# Version: 0.7
 
 # who did what:
-1. Eman Naseerkhan - Made Saved Office Hours Schedule UI and worked on displaying data
-2. Yogi Chipalkatti - worked on sorting SemesterSchedule by date and timeslot
-3. Bhuvanesh Selvaraj - Worked on Define Schedule page functionality
-4. Nhat Nguyen - Worked on Define Schedule page UI
+1. Eman Naseerkhan - Added delete UI and implemented functionality for Delete
+2. Yogi Chipalkatti -
+3. Bhuvanesh Selvaraj - Worked on Search Schedule page functionality
+4. Nhat Nguyen - Worked on Search Schedule page UI
 
 # Any other instruction that users need to know:
 

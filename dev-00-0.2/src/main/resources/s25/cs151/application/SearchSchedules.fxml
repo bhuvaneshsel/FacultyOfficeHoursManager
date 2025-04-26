@@ -20,7 +20,7 @@
             <TableColumn fx:id="comment" prefWidth="110.0" text="Comment" />
         </columns>
       </TableView>
-      <TextField fx:id="searchInput" layoutX="83.0" layoutY="34.0" prefHeight="27.0" prefWidth="500.0" promptText="keyword..." />
+      <TextField fx:id="searchInput" layoutX="83.0" layoutY="34.0" prefHeight="27.0" prefWidth="393.0" promptText="keyword..." />
       <Button fx:id="backButton" layoutX="274.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToHome" text="Back">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -31,5 +31,10 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="deleteButton" layoutX="523.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" textFill="#f60000">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
