@@ -53,6 +53,8 @@ public class SearchSchedulesController implements Initializable {
     @FXML
     private TableColumn<SemesterSchedule, String> timeSlot;
 
+    private final NavController navigator =  new NavController();
+
     String scheduleCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/Schedule.csv";
 
     private ObservableList<SemesterSchedule> dataList = FXCollections.observableArrayList();
@@ -130,11 +132,7 @@ public class SearchSchedulesController implements Initializable {
     }
 
     public void switchToHome(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "Home.fxml");
     }
 
     //Occurs when delete button is pushed, if an item in the table was selected it will be removed

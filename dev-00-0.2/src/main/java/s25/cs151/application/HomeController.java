@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class HomeController extends NavController {
 
     private Stage stage;
     private Scene scene;
@@ -24,79 +24,45 @@ public class HomeController {
     @FXML
     private Button coursesButton;
 
+    private final NavController navigator =  new NavController();
+
     //executes when Semester's Office Hours button is pressed
     public void switchToOfficeHoursPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("DefineOfficeHours.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "DefineOfficeHours.fxml");
     }
 
     //executes when Saved Office Hours button is pressed
     public void switchToSavedOfficeHoursPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SavedOfficeHours.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "SavedOfficeHours.fxml");
     }
 
     public void switchToSavedTimeSlotsPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SavedTimeSlots.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "SavedTimeSlots.fxml");
     }
 
     public void switchToDefineTimeSlotsPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("DefineTimeSlots.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "DefineTimeSlots.fxml");
     }
 
     //executes when Semester's Courses button is pressed
     public void switchToSemesterCoursesPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("DefineCourses.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "DefineCourses.fxml");
     }
 
     public void switchToSavedSemesterCoursesPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SavedCourses.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "SavedCourses.fxml");
     }
 
     public void switchToSavedSchedule(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SavedSchedule.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "SavedSchedule.fxml");
     }
 
     public void switchToDefineSchedule(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("DefineSchedule.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "DefineSchedule.fxml");
     }
 
     public void switchToSearchSchedulesPage(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SearchSchedules.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "SearchSchedules.fxml");
     }
 
 }

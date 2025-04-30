@@ -46,6 +46,8 @@ public class SemesterScheduleController implements Initializable {
     @FXML
     private Button saveButton;
 
+    private final NavController navigator =  new NavController();
+
     String timeSlotsCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/TimeSlots.csv";
     String coursesCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/Courses.csv";
     String scheduleCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/Schedule.csv";
@@ -73,11 +75,7 @@ public class SemesterScheduleController implements Initializable {
     }
 
     public void switchToHome(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "Home.fxml");
     }
 
     public ArrayList<String> getTimeSlots(String filePath) throws FileNotFoundException {

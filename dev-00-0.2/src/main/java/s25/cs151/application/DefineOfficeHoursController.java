@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class DefineOfficeHoursController implements Initializable {
+public class DefineOfficeHoursController extends NavController implements Initializable {
     @FXML
     private ChoiceBox<String> semesterChoiceBox;
     @FXML
@@ -38,6 +38,8 @@ public class DefineOfficeHoursController implements Initializable {
     private CheckBox fridayCheckBox;
     @FXML
     private Label errorLabel;
+
+    private final NavController navigator =  new NavController();
 
     String officeHoursCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/OfficeHours.csv";
 
@@ -112,11 +114,7 @@ public class DefineOfficeHoursController implements Initializable {
 
     //executes when Cancel and Save button are pressed
     public void switchToHome(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "Home.fxml");
     }
 
     public boolean validateInputs() {

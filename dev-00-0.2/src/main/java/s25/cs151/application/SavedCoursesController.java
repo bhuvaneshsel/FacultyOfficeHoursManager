@@ -41,6 +41,8 @@ public class SavedCoursesController implements Initializable{
     @FXML
     private TableView<SemesterCourses> coursesTable;
 
+    private final NavController navigator =  new NavController();
+
     String coursesCSV = System.getProperty("user.dir")+"/src/main/resources/s25/cs151/application/Courses.csv";
 
     private ObservableList<SemesterCourses> dataList = FXCollections.observableArrayList();
@@ -86,10 +88,6 @@ public class SavedCoursesController implements Initializable{
         return CSVList;
     }
     public void switchToHome(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        navigator.navigateTo(e, "Home.fxml");
     }
 }

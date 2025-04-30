@@ -1,13 +1,16 @@
 # Name of application: Office Connect
-# Version: 0.7
+# Version: 0.8
 
 # who did what:
-1. Eman Naseerkhan - Added delete UI and implemented functionality for Delete
-2. Yogi Chipalkatti - Worked on testing/populating different schedules
-3. Bhuvanesh Selvaraj - Worked on Search Schedule page functionality
-4. Nhat Nguyen - Worked on Search Schedule page UI
+1. Eman Naseerkhan - Implemented Polymorphism
+2. Yogi Chipalkatti -
+3. Bhuvanesh Selvaraj -
+4. Nhat Nguyen -
 
-# Any other instruction that users need to know:
+# Assignment Notes:
+Polymorphism is used in this application with Navigation as the parent interface. The concrete child classes
+it is used in are: HomeController, DefineOfficeHoursController, SavedCoursesController, SavedOfficeHoursController,
+SavedScheduleController, SemesterCoursesController, SemesterScheduleController and TimeSlotsController.
 
 
 
