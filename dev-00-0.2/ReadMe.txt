@@ -4,8 +4,8 @@
 # who did what:
 1. Eman Naseerkhan - Implemented Polymorphism
 2. Yogi Chipalkatti -
-3. Bhuvanesh Selvaraj -
-4. Nhat Nguyen -
+3. Bhuvanesh Selvaraj - Added functionality to Edit Schedule Page
+4. Nhat Nguyen - Created UI for Edit Schedule Page
 
 # Assignment Notes:
 Polymorphism is used in this application with Navigation as the parent interface. The concrete child classes
