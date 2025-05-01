@@ -52,12 +52,17 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="searchSchedules" layoutX="331.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchToSearchSchedulesPage" prefHeight="53.0" prefWidth="233.0" style="-fx-border-color: #cfcf98; -fx-background-color: linear-gradient(to bottom, #fdf6e3, #e6d8b9);" text="Search Schedules" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="searchSchedules" layoutX="331.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchToSearchSchedulesPage" prefHeight="53.0" prefWidth="109.0" style="-fx-border-color: #cfcf98; -fx-background-color: linear-gradient(to bottom, #fdf6e3, #e6d8b9);" text="Search Schedules" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Line endX="115.96926879882812" layoutX="193.0" layoutY="197.0" startX="-100.0" />
       <Line endX="100.0" layoutX="-37.0" layoutY="196.0" startX="75.0" />
+      <Button fx:id="editSchedulesButton" layoutX="455.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchToEditSchedulesPage" prefHeight="53.0" prefWidth="109.0" style="-fx-border-color: #cfcf98; -fx-background-color: linear-gradient(to bottom, #fdf6e3, #e6d8b9);" text="Edit Schedules" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

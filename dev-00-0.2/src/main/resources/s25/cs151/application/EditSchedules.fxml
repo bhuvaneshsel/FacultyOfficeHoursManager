@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s25.cs151.application.EditSchedulesController">
+    <children>
+        <TableView fx:id="scheduleTable" layoutX="17.0" layoutY="92.0" prefHeight="267.0" prefWidth="567.0">
+            <columns>
+                <TableColumn fx:id="fullName" prefWidth="125.0" text="Full Name" />
+                <TableColumn fx:id="date" prefWidth="84.0" text="Date" />
+                <TableColumn fx:id="timeSlot" prefWidth="65.0" text="Time Slot" />
+                <TableColumn fx:id="course" prefWidth="100.0" text="Course" />
+                <TableColumn fx:id="reason" prefWidth="82.0" text="Reason" />
+                <TableColumn fx:id="comment" prefWidth="110.0" text="Comment" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchInput" layoutX="81.0" layoutY="60.0" prefHeight="27.0" prefWidth="393.0" promptText="keyword..." />
+        <Button fx:id="backButton" layoutX="277.0" layoutY="365.0" mnemonicParsing="false" onAction="#switchToHome" text="Back">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Label fx:id="searchLabel" layoutX="17.0" layoutY="60.0" prefHeight="17.0" prefWidth="59.0" text="Search">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="editButton" layoutX="523.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </Button>
+      <Text layoutX="215.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Schedules" wrappingWidth="169.51171875">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

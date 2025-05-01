@@ -65,4 +65,8 @@ public class HomeController extends NavController {
         navigator.navigateTo(e, "SearchSchedules.fxml");
     }
 
+    public void switchToEditSchedulesPage(ActionEvent e) throws IOException {
+        navigator.navigateTo(e, "EditSchedules.fxml");
+    }
+
 }
