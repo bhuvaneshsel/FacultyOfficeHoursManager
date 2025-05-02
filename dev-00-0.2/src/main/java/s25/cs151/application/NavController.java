@@ -1,4 +1,4 @@
-package Controller;
+package s25.cs151.application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

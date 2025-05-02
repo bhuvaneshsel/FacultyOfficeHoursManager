@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import s25.cs151.application.NavController;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import Model.SemesterCourses;
+import s25.cs151.application.NavController;
 
 import java.io.File;
 import java.io.FileNotFoundException;

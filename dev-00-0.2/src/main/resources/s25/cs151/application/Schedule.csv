@@ -1,4 +1,5 @@
 Name,Date,TimeSlot,Course,Reason,Comment
+Mark Smith,04/14/2025,1:00 - 2:00,CS151-04,study hours,n/a
 Jack Johnson,04/26/2025,1:00 - 2:00,CS151-04,hw,n/a
 Anne Jackson,04/29/2025,1:00 - 2:00,CMPE120-03,project,n/a
 George Smith,04/30/2025,5:15 - 6:00,CS151-04,homework,n/a
@@ -8,4 +9,3 @@ Mark Andrews,05/05/2025,1:00 - 2:00,CMPE120-03,project,n/a
 Anne Jackson,05/07/2025,3:00 - 4:00,CS151-04,homework,n/a
 Jack Johnson,05/08/2025,5:00 - 6:00,CS151-04,exam prep,n/a
 Bobby Jackson,05/08/2025,5:00 - 6:00,Math42-01,homework,n/a
-Mark Smith,04/14/2025,1:00 - 2:00,CS151-04,study hours,n/a
