@@ -1,4 +1,4 @@
-package s25.cs151.application;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -6,6 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import Model.Navigation;
+
 import java.io.IOException;
 
 public class NavController implements Navigation {

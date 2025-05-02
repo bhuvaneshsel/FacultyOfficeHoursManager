@@ -1,4 +1,4 @@
-package s25.cs151.application;
+package Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import Model.SemesterSchedule;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -3,7 +3,7 @@
 
 # who did what:
 1. Eman Naseerkhan - Implemented Polymorphism
-2. Yogi Chipalkatti -
+2. Yogi Chipalkatti - Organized classes into MVC
 3. Bhuvanesh Selvaraj - Added functionality to Edit Schedule Page
 4. Nhat Nguyen - Created UI for Edit Schedule Page
 

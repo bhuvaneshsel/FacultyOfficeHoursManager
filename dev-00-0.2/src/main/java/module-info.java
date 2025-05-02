@@ -7,4 +7,8 @@ module s25.cs151.application {
 
     opens s25.cs151.application to javafx.fxml;
     exports s25.cs151.application;
+    exports Controller;
+    opens Controller to javafx.fxml;
+    exports Model;
+    opens Model to javafx.fxml;
 }

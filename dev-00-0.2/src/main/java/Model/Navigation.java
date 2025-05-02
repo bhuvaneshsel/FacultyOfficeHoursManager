@@ -1,4 +1,4 @@
-package s25.cs151.application;
+package Model;
 
 import javafx.event.ActionEvent;
 import java.io.IOException;

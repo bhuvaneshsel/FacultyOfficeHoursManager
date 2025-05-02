@@ -1,4 +1,4 @@
-package s25.cs151.application;
+package Model;
 
 public class SemesterSchedule implements Comparable<SemesterSchedule> {
 
