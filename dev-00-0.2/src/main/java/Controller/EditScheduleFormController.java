@@ -11,7 +11,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import Model.SemesterSchedule;
-import s25.cs151.application.NavController;
 
 import java.io.*;
 import java.net.URL;

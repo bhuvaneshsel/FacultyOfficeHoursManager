@@ -1,4 +1,4 @@
-package s25.cs151.application;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class NavController implements Navigation {
     @Override
     public void navigateTo(ActionEvent event, String fxmlFileName) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFileName));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/" + fxmlFileName));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

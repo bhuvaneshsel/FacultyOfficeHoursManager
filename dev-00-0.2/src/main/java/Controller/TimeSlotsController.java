@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import s25.cs151.application.NavController;
 
 import java.io.FileWriter;
 import java.io.IOException;

@@ -15,7 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import Model.SemesterSchedule;
-import s25.cs151.application.NavController;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -147,7 +146,7 @@ public class EditSchedulesController extends NavController implements Initializa
         SemesterSchedule selectedItem = scheduleTable.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("EditScheduleForm.fxml"));
+            loader.setLocation(getClass().getResource("/View/EditScheduleForm.fxml"));
             Parent parent = loader.load();
 
 
